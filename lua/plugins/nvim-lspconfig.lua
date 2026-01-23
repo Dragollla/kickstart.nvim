@@ -119,6 +119,22 @@ return {
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
           end, '[T]oggle Inlay [H]ints')
         end
+
+        -- AutoCmd to refresh codelenses
+        if client and client_supports_method(client, vim.lsp.protocol.Methods.workspace_codeLens_refresh, event.buf) then
+          vim.api.nvim_create_autocmd({ 'BufEnter', 'InsertLeave' }, {
+            group = vim.api.nvim_create_augroup('codelens-refresh', { clear = true }),
+            callback = function(lenseEvent)
+              vim.lsp.codelens.refresh { bufnr = lenseEvent.buf }
+            end,
+          })
+          vim.api.nvim_create_autocmd('LspDetach', {
+            group = vim.api.nvim_create_augroup('codelens-lsp-detach', { clear = true }),
+            callback = function(lenseEvent)
+              vim.api.nvim_clear_autocmds { group = 'codelens-refresh', buffer = lenseEvent.buf }
+            end,
+          })
+        end
       end,
     })
 
