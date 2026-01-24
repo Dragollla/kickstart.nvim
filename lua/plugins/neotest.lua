@@ -5,8 +5,12 @@ return {
     'nvim-lua/plenary.nvim',
     'antoinemadec/FixCursorHold.nvim',
     'nvim-treesitter/nvim-treesitter',
-    -- maybe switch to
-    -- 'nsidorenco/neotest-vstest',
-    'Issafalcon/neotest-dotnet',
+    'nsidorenco/neotest-vstest',
+  },
+  opts = {
+    adapters = {
+      require 'neotest-vstest',
+    },
+    -- log_level = 1,
   },
 }
