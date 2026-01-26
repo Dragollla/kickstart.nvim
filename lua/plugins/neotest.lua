@@ -5,7 +5,7 @@ return {
     'nvim-lua/plenary.nvim',
     'antoinemadec/FixCursorHold.nvim',
     'nvim-treesitter/nvim-treesitter',
-    'nsidorenco/neotest-vstest',
+    { 'nsidorenco/neotest-vstest', dev = true },
   },
   opts = {
     adapters = {

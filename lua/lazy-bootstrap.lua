@@ -39,17 +39,17 @@ rtp:prepend(lazypath)
 --        end,
 --    }
 
-require('lazy').setup({
+require('lazy').setup {
   spec = {
     { import = 'plugins' },
   },
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
-}, {
   dev = {
-    path = 'dragollla',
-    patterns = { 'neotest-vstest' },
+    path = function()
+      return vim.fn.stdpath 'config' .. '/lua/dragollla'
+    end,
   },
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -70,4 +70,4 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
-})
+}
