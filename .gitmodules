@@ -1,4 +1,4 @@
 [submodule "lua/dragollla/neotest-vstest"]
 	path = lua/dragollla/neotest-vstest
-	url = git@github.com:Dragollla/neotest-vstest.git
+	url = https://github.com/Dragollla/neotest-vstest.git
 	branch = fix/argv-check
