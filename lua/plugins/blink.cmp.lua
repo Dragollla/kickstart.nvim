@@ -30,7 +30,6 @@ return {
       },
       opts = {},
     },
-    'folke/lazydev.nvim',
   },
   --- @module 'blink.cmp'
   --- @type blink.cmp.Config
@@ -46,8 +45,6 @@ return {
       --
       -- For an understanding of why the 'default' preset is recommended,
       -- you will need to read `:help ins-completion`
-      --
-      -- No, but seriously. Please read `:help ins-completion`, it is really good!
       --
       -- All presets have the following mappings:
       -- <tab>/<s-tab>: move to right/left of your snippet expansion
@@ -76,10 +73,7 @@ return {
     },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'lazydev' },
-      providers = {
-        lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
-      },
+      default = { 'lsp', 'path', 'snippets' },
     },
 
     snippets = { preset = 'luasnip' },
