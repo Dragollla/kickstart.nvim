@@ -2,3 +2,6 @@
 	path = lua/dragollla/neotest-vstest
 	url = https://github.com/Dragollla/neotest-vstest.git
 	branch = fix/argv-check
+[submodule "lua/dragollla/roslyn.nvim"]
+	path = lua/dragollla/roslyn.nvim
+	url = git@github.com:Dragollla/roslyn.nvim.git
